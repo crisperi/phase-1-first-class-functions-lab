@@ -8,7 +8,17 @@ const returnLastTwoDrivers = drivers => {
     return lastTwo;
 }  
 
-const selectingDrivers = (drivers) =>{
-returnFirstTwoDrivers(drivers);
-returnLastTwoDrivers(drivers);
+const selectingDrivers = [returnFirstTwoDrivers,returnLastTwoDrivers];
+
+const createFareMultiplier = x => {
+    return function (fare){
+        return fare*x;
+    }
+}
+
+const fareDoubler = createFareMultiplier(2);
+const fareTripler =  createFareMultiplier(3);
+const tripledFare = fareTripler();
+const selectDifferentDrivers =(drivers ,returnDrivers) => {
+    return returnDrivers(drivers);
 }
